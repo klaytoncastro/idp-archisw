@@ -1,0 +1,11 @@
+@startuml
+state "Reserva Criada" as RC
+state "Reserva Confirmada" as RCF
+state "Reserva Cancelada" as RCC
+
+[*] --> RC
+RC --> RCF : pagamento confirmado
+RC --> RCC : cliente cancelou
+RCF --> RCC : cliente cancelou
+
+@enduml

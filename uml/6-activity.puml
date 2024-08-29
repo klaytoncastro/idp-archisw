@@ -1,0 +1,13 @@
+@startuml
+start
+:Cliente faz login;
+:Selecionar Quarto;
+if (Disponível?) then (sim)
+  :Reservar Quarto;
+  :Processar Pagamento;
+  :Confirmar Reserva;
+else (não)
+  :Mostrar Mensagem de Erro;
+endif
+stop
+@enduml

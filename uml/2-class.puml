@@ -1,0 +1,39 @@
+@startuml
+class Reserva {
+  +reservaID: int
+  +data: Date
+  +hora: Time
+  +status: String
+  +criarReserva()
+  +cancelarReserva()
+}
+
+class Cliente {
+  +clienteID: int
+  +nome: String
+  +email: String
+  +telefone: String
+  +fazerReserva()
+  +cancelarReserva()
+}
+
+class Quarto {
+  +quartoID: int
+  +numero: int
+  +tipo: String
+  +preco: float
+  +consultarDisponibilidade()
+}
+
+class Pagamento {
+  +pagamentoID: int
+  +valor: float
+  +data: Date
+  +processarPagamento()
+}
+
+Reserva --> Cliente : "associado a"
+Reserva --> Quarto : "para"
+Reserva --> Pagamento : "associado a"
+
+@enduml

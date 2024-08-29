@@ -1,0 +1,14 @@
+@startuml
+component Sistema {
+  [Módulo de Reservas] --> [Módulo de Pagamento]
+  [Módulo de Reservas] --> [Banco de Dados]
+  [Módulo de Reservas] --> [Sistema de Notificações]
+}
+
+component Cliente {
+  [Aplicativo Mobile] --> [Módulo de Reservas]
+  [Website] --> [Módulo de Reservas]
+}
+
+[Admin Console] --> [Módulo de Reservas]
+@enduml

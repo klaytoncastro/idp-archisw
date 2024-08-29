@@ -1,0 +1,12 @@
+@startuml
+actor Cliente
+
+Cliente -> Sistema : fazerReserva()
+Sistema -> Quarto : consultarDisponibilidade()
+Quarto --> Sistema : disponibilidade()
+Sistema -> Reserva : criarReserva()
+Reserva -> Pagamento : processarPagamento()
+Pagamento --> Reserva : confirmação()
+Sistema --> Cliente : confirmaçãoReserva()
+
+@enduml

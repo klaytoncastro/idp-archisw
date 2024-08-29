@@ -1,0 +1,21 @@
+@startuml
+!define RECTANGLE class
+
+package "Sistema de Reservas Online" {
+
+  actor Cliente
+  actor Administrador
+  
+  usecase "Fazer Reserva" as UC1
+  usecase "Cancelar Reserva" as UC2
+  usecase "Consultar Disponibilidade" as UC3
+  usecase "Gerenciar Reservas" as UC4
+  
+  Cliente --> UC1
+  Cliente --> UC2
+  Cliente --> UC3
+  Administrador --> UC4
+  
+}
+
+@enduml
