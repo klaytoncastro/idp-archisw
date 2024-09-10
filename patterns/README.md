@@ -52,7 +52,7 @@ A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico 
 
 ## Grupo 4: Sistema de Otimização de Rotas e Logística
 
-**Integrantes**: Rafael Cândido, Luca Verdade, Lucas Fidalgo, Vinicius (4)
+**Integrantes**: Rafael Cândido, Luca Verdade, Lucas Fidalgo, Vinicius
 
 **Desafio:** Construir um sistema completo para modelar e resolver questões de logística e otimização de rotas de entrega. O sistema deve lidar com variáveis como distâncias, custos e capacidades dos veículos para oferecer soluções eficientes.
 
