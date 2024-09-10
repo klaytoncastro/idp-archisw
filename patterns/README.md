@@ -70,5 +70,5 @@ A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico 
 - Arquitetura completa do sistema (incluindo a escolha do banco de dados SQL/NoSQL).
 - Diagrama de Classes UML.
 - Diagrama de Sequência ou Casos de Uso (dependendo do desafio).
-- Justificativa detalhada das escolhas de design patterns e arquitetura de banco de dados.
+- Justificativa para as escolhas de design patterns e SGBDs. 
 - Data de Apresentação: **19/09/2024**
