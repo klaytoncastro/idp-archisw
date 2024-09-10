@@ -1,6 +1,6 @@
 # Design Patterns
 
-A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico que abrange a arquitetura completa de um sistema, com foco na escolha adequada de banco de dados (SQL ou NoSQL), design patterns e modelagem UML. Cada grupo deve propor a solução mais apropriada, justificando suas escolhas.
+A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico que abrange a arquitetura completa de um sistema, com foco na escolha adequada de banco de dados (SQL ou NoSQL), design patterns e modelagem UML. Cada grupo deve propor a solução mais apropriada, justificando suas escolhas. Utilize o material de referência sobre [Design Patterns](https://github.com/klaytoncastro/idp-archisw/blob/main/patterns/DesignPatterns.pdf) para implementar os padrões. 
 
 ## Grupo 1: Sistema de Cache Dinâmico para Site de Alta Demanda
 
