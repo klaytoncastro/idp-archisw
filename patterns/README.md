@@ -1,10 +1,10 @@
 # Design Patterns
 
-A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico que abrange a arquitetura completa de um sistema, com foco na escolha adequada de banco de dados (SQL ou NoSQL), design patterns e modelagem UML. Cada grupo deve propor a solução mais apropriada, justificando suas escolhas. Utilize o material de referência sobre [Design Patterns](https://github.com/klaytoncastro/idp-archisw/blob/main/patterns/DesignPatterns.pdf) para implementar os padrões. 
+A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico que abrange o desenvolvimento de uma arquitetura completa de um sistema, incluindo a escolha adequada do sistema gerenciador banco de dados (SQL ou NoSQL: Chave-Valor, Documentos, Colunar ou Grafo), design patterns e modelagem UML. Cada grupo deve propor a solução mais apropriada, justificando suas escolhas. Utilize o material de referência sobre [Design Patterns](https://github.com/klaytoncastro/idp-archisw/blob/main/patterns/DesignPatterns.pdf) para entender como funcionaria a implementação dos padrões. 
 
 ## Grupo 1: Sistema de Cache Dinâmico para Site de Alta Demanda
 
-**Integrantes**:  Távora, Bee, Petrus, Vitor
+**Integrantes**: Távora, Bee, Petrus, Vitor
 
 **Desafio:** Desenvolver uma solução completa para um sistema de cache dinâmico que permita o acesso rápido a informações em um site de alta demanda (como e-commerce ou rede social). O sistema deve ser escalável e eficiente no gerenciamento de atualizações de cache em tempo real.
 
