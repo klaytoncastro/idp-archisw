@@ -4,6 +4,8 @@ A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico 
 
 ## Grupo 1: Sistema de Cache Dinâmico para Site de Alta Demanda
 
+**Integrantes**:  Távora, Bee, Petrus, Vitor
+
 **Desafio:** Desenvolver uma solução completa para um sistema de cache dinâmico que permita o acesso rápido a informações em um site de alta demanda (como e-commerce ou rede social). O sistema deve ser escalável e eficiente no gerenciamento de atualizações de cache em tempo real.
 
 ### Requisitos:
@@ -17,6 +19,8 @@ A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico 
 ---
 
 ## Grupo 2: Gerenciamento e Distribuição em Tempo Real de Conteúdo Digital
+
+**Integrantes**: Mateus Batista, Lucas Rabelo, João Henrique
 
 **Desafio:** Projetar uma solução para o gerenciamento e distribuição em tempo real de conteúdo diversificado (textos, vídeos, imagens) para uma plataforma digital de notícias. O sistema deve suportar grandes volumes de atualizações e permitir consultas rápidas.
 
@@ -32,6 +36,8 @@ A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico 
 
 ## Grupo 3: Coleta e Análise de Séries Temporais de Dados IoT
 
+**Integrantes**: Matheus Antônio, Leonardo Freitas, Maria Fernanda
+
 **Desafio:** Desenvolver uma arquitetura completa para coletar, armazenar e analisar grandes volumes de dados de séries temporais provenientes de dispositivos IoT. O sistema deve permitir análises detalhadas e previsões baseadas nesses dados.
 
 ### Requisitos:
@@ -45,6 +51,8 @@ A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico 
 ---
 
 ## Grupo 4: Sistema de Otimização de Rotas e Logística
+
+**Integrantes**: Rafael Cândido, Luca Verdade, Lucas Fidalgo, Vinicius (4)
 
 **Desafio:** Construir um sistema completo para modelar e resolver questões de logística e otimização de rotas de entrega. O sistema deve lidar com variáveis como distâncias, custos e capacidades dos veículos para oferecer soluções eficientes.
 
@@ -63,3 +71,4 @@ A turma será dividida em 4 grupos. Cada grupo receberá um desafio específico 
 - Diagrama de Classes UML.
 - Diagrama de Sequência ou Casos de Uso (dependendo do desafio).
 - Justificativa detalhada das escolhas de design patterns e arquitetura de banco de dados.
+- Data de Apresentação: **19/09/2024**
