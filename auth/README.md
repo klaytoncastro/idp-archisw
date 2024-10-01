@@ -1,10 +1,7 @@
-# Desafio: Implementando Autenticação e Autorização com Flask, MongoDB e JWT
-
+# Desafio: Implementacao de Arquitetura para os Processos de Autenticação e Autorização
 <!--
 
 ## Contextualizacao
-
-
 
 
 ## rbac
@@ -468,7 +465,9 @@ def login():
 
 ### 6. Como rodar o projeto? 
 
-Vamos configurar o ambiente para rodar em containers Docker. Usaremos Docker Compose para gerenciar os serviços. Voce precisa do WSL e Docker para rodar em um ambiente Windows:
+Vamos configurar o ambiente para rodar em containers Docker. Usaremos Docker Compose para gerenciar os serviços. Voce precisa do WSL e Docker para rodar em um ambiente Windows. 
+
+Clone este repositorio e suba os conteineres do Flask e MongoDB. 
 
 <!-- INSERIR TUTORIAL-->
 
