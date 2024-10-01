@@ -1,4 +1,4 @@
-# Desafio: Implementacao de Arquitetura para os Processos de Autenticação e Autorização
+Implementacao de Arquitetura para os Processos de Autenticação e Autorização
 <!--
 
 ## Contextualizacao
