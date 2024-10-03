@@ -2,7 +2,7 @@
 
 ## 1. Introdução
 
-Autenticação e autorização são pilares na segurança de sistemas modernos, utilizados em praticamente qualquer aplicação web e móvel. Neste projeto, você desenvolverá habilidades essenciais para o mercado, aplicando esses conceitos por meio de tecnologias amplamente usadas, além de explorar dois modelos bastante utilizados para o controle de acesso. Ao final deste projeto, você implementará autenticação e autorização em um sistema simples utilizando preferenciamente **Python Flask** no backend, **MongoDB** para persistência de dados, e **JWT** para autenticação e autorização de usuários, aplicando os conceitos de **RBAC (Role-Based Access Control)** e **ABAC (Attribute-Based Access Control)**, além da proteção de senhas usando **bcrypt**.
+Os processos de autenticação e autorização são fundamentais para a segurança em sistemas de informação, sendo utilizados em quase todas as aplicações web,  móveis e sistemas modernos. Neste projeto, você aplicará o conhecimento de arquitetura de software para implementar o controle de acesso, um recurso para proteger os recursos de uma aplicação, de plataformas de gerenciamento de usuários, de permissões em recursos de grandes corporações, aplicativos bancários e sistemas de gerenciamento de conteúdo. Você desenvolverá habilidades procuradas no mercado, aplicando esses conceitos por meio de tecnologias populares. Ao concluir o projeto, você será capaz de implementar autenticação e autorização em um sistema, preferencialmente utilizando Python Flask no backend, MongoDB para persistência de dados e JWT para autenticação e autorização de usuários durante o uso da aplicação. Além disso, aplicará os conceitos de RBAC (Role-Based Access Control) e ABAC (Attribute-Based Access Control), juntamente com a proteção de senhas utilizando bcrypt.
 
 ## Tecnologias Utilizadas
 - **Python Flask**: Framework para o backend RESTful.
@@ -78,17 +78,12 @@ def read_content():
 if __name__ == '__main__':
     app.run(host = 0.0.0.0, debug=True)
 ```
-<!--
 
+### Alguns Design Aplicáveis ao RBAC
 
-Padrões de Design Aplicados ao RBAC
-1. Factory Pattern para Criação de Papéis (Roles)
+O **Factory Pattern** pode ser usado para criar papéis (roles) dinamicamente no sistema. Isso é útil quando há diferentes tipos de papéis que podem ser gerados com base em parâmetros fornecidos:
 
-O Factory Pattern pode ser usado para criar papéis (roles) dinamicamente no sistema. Isso é útil quando há diferentes tipos de papéis que podem ser gerados com base em parâmetros fornecidos.
-Exemplo de Código:
-
-python
-
+```python
 # Factory Pattern para criar diferentes papéis no sistema
 class Role:
     def __init__(self, name, permissions):
@@ -111,14 +106,11 @@ editor_role = factory.create_role('editor')
 
 print(admin_role.name, admin_role.permissions)  # Saída: admin ['create', 'edit', 'delete', 'view']
 print(editor_role.name, editor_role.permissions)  # Saída: editor ['edit', 'view']
+```
 
-2. Policy Pattern para Avaliação de Permissões
+O **Policy Pattern** pode ser usado para encapsular a lógica de permissão de ações dentro de uma classe, permitindo que seja facilmente modificada ou substituída:
 
-O Policy Pattern pode ser usado para encapsular a lógica de permissão de ações dentro de uma classe, permitindo que seja facilmente modificada ou substituída.
-Exemplo de Código:
-
-python
-
+```python
 class Policy:
     def is_allowed(self, user, action):
         raise NotImplementedError
@@ -137,14 +129,11 @@ user_policy = UserPolicy()
 
 print(admin_policy.is_allowed('admin', 'delete'))  # Saída: True
 print(user_policy.is_allowed('user', 'delete'))  # Saída: False
+```
 
-3. Chain of Responsibility para Avaliação de Múltiplas Políticas
+O **Chain of Responsibility** pode ser usado para fazer a avaliação de múltiplas políticas em sequência, permitindo que cada uma trate um aspecto da permissão. Se uma política não pode tratar a solicitação, ela passa para a próxima na cadeia:
 
-O Chain of Responsibility permite a avaliação de múltiplas políticas em sequência, permitindo que cada uma trate um aspecto da permissão. Se uma política não pode tratar a solicitação, ela passa para a próxima na cadeia.
-Exemplo de Código:
-
-python
-
+```python
 class PolicyHandler:
     def __init__(self, next_handler=None):
         self.next_handler = next_handler
@@ -188,13 +177,11 @@ print(user_handler.handle(user, action))  # Saída: True
 admin = {'role': 'admin'}
 action = 'delete'
 print(user_handler.handle(admin, action))  # Saída: True
+```
 
-4. Strategy Pattern para Definir Diferentes Políticas de Controle de Acesso
+O **Strategy Pattern** pode ser usado para definir diferentes estratégias de controle de acesso (RBAC, ABAC, etc.) e selecionar dinamicamente a melhor política para o contexto:
 
-O Strategy Pattern permite definir diferentes estratégias de controle de acesso (RBAC, ABAC, etc.) e selecionar dinamicamente a melhor política para o contexto.
-Exemplo de Código:
-
-python
+```python
 
 class AccessStrategy:
     def evaluate(self, user, action):
@@ -225,13 +212,11 @@ print(rbac_strategy.evaluate(user, 'edit'))  # Saída: True
 
 user = {'location': 'office'}
 print(abac_strategy.evaluate(user, 'view'))  # Saída: True
+```
 
-5. Decorator Pattern para Adicionar Condicionalmente Regras de Acesso
+O **Decorator Pattern** pode ser usado para adicionar restrições ou requisitos adicionais às permissões sem alterar a lógica principal:
 
-O Decorator Pattern pode ser usado para adicionar restrições ou requisitos adicionais às permissões sem alterar a lógica principal.
-Exemplo de Código:
-
-python
+```python
 
 class Policy:
     def is_allowed(self, user, action):
@@ -261,11 +246,7 @@ basic_policy = BasicPolicy()
 time_restricted_policy = TimeRestrictedPolicy(basic_policy)
 
 print(time_restricted_policy.is_allowed('user', 'view'))  # Saída: True ou False dependendo da hora
-
-
-
-
--->
+```
 
 ## 3. ABAC (Attribute-Based Access Control) 
 
