@@ -461,17 +461,29 @@ def login():
     return jsonify({"message": "Invalid credentials"}), 401
 ```
 
+Embora o RBAC seja um modelo de controle de acesso amplamente utilizado, o ABAC oferece uma abordagem mais flexível e adaptável para cenários em que as permissões precisam ser controladas dinamicamente com base em múltiplos fatores. O ABAC, no entanto, pode ser mais complexo de implementar e exige uma avaliação cuidadosa de desempenho em grandes sistemas.
+
 ## 7. Atividade em Grupo 
 
-Embora o RBAC seja um modelo de controle de acesso muito popular, o ABAC oferece uma abordagem mais flexível, ideal para cenários onde o controle dinâmico de permissões é necessário. Contudo, o ABAC pode ser mais complexo de implementar e pode ter impactos no desempenho, especialmente em grandes sistemas. Com base no que vimos, nosso próximo desafio será implementar um sistema de autenticação e autorização, aplicando JWT, RBAC ou ABAC, usando os conceitos discutidos e  Design Patterns:
+Com base nos modelos RBAC, ABAC, e nos conceitos de Design Patterns, o nosso desafio será implementar um sistema de autenticação e autorização utilizando as melhores práticas de controle de acesso. Você aplicará JWT, RBAC ou ABAC, e integrará Design Patterns para tornar o sistema flexível, escalável e de fácil manutenção.
 
-- Utilize Factory Pattern para criar dinamicamente papéis e permissões no RBAC ou atributos no ABAC.
-- Implemente o Strategy Pattern para permitir que o sistema escolha dinamicamente qual abordagem (RBAC ou ABAC) usar para gerenciar permissões.
-- Utilize Decorator Pattern para adicionar restrições como tempo e localização às políticas de acesso.
+### Escolha o Modelo de Controle de Acesso:
+- RBAC: Utilize papéis predefinidos para controlar as permissões dos usuários.
+- ABAC: Baseie o controle de acesso em atributos dinâmicos, considerando o usuário, o recurso, a ação e o ambiente.
 
+### Aplicação de Design Patterns:
 
+- Factory Pattern: Use o Factory Pattern para criar papéis no RBAC ou atributos no ABAC dinamicamente, garantindo flexibilidade na criação de permissões e atributos.
+- Strategy Pattern: Implemente o Strategy Pattern para definir diferentes estratégias de controle de acesso (ex: uma estratégia para RBAC e outra para ABAC). Isso permitirá que o sistema escolha dinamicamente qual abordagem aplicar, dependendo do contexto do usuário ou do sistema.
+- Policy Pattern: Encapsule as regras de controle de acesso dentro do Policy Pattern para modularizar a lógica de avaliação de permissões, facilitando a manutenção e evolução do código.
+- Chain of Responsibility: Utilize o Chain of Responsibility para avaliar múltiplas políticas de acesso de forma sequencial. Cada política poderá tratar uma parte da solicitação e, se não puder responder, passará para a próxima na cadeia.
+- Decorator Pattern: Aplique o Decorator Pattern para adicionar condições extras às políticas de acesso, como restrições de tempo, localização geográfica, ou condições específicas do ambiente, sem alterar a lógica principal.
+- Autenticação e Autorização com JWT: Implemente a autenticação de usuários utilizando JWT. Garanta que o token seja gerado corretamente e que o sistema verifique a validade do token ao acessar rotas protegidas.
+- Armazenamento de Dados: Utilize o MongoDB para armazenar informações sobre usuários, papéis, atributos e permissões.
 
+### Requisitos Adicionais:
 
+O sistema deve permitir diferentes níveis de acesso, como administradores, editores e leitores, no caso de RBAC, ou controlar o acesso com base em atributos como localização e horário, no caso de ABAC. O uso de Design Patterns deve ser implementado de forma a facilitar a expansão futura do sistema.
 
 ### Como rodar o projeto? 
 
