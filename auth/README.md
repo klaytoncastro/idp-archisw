@@ -473,13 +473,13 @@ Com base nos modelos RBAC, ABAC, e nos conceitos de Design Patterns, o nosso des
 
 ### Aplicação de Design Patterns:
 
-- Factory Pattern: Use o Factory Pattern para criar papéis no RBAC ou atributos no ABAC dinamicamente, garantindo flexibilidade na criação de permissões e atributos.
-- Strategy Pattern: Implemente o Strategy Pattern para definir diferentes estratégias de controle de acesso (ex: uma estratégia para RBAC e outra para ABAC). Isso permitirá que o sistema escolha dinamicamente qual abordagem aplicar, dependendo do contexto do usuário ou do sistema.
-- Policy Pattern: Encapsule as regras de controle de acesso dentro do Policy Pattern para modularizar a lógica de avaliação de permissões, facilitando a manutenção e evolução do código.
-- Chain of Responsibility: Utilize o Chain of Responsibility para avaliar múltiplas políticas de acesso de forma sequencial. Cada política poderá tratar uma parte da solicitação e, se não puder responder, passará para a próxima na cadeia.
-- Decorator Pattern: Aplique o Decorator Pattern para adicionar condições extras às políticas de acesso, como restrições de tempo, localização geográfica, ou condições específicas do ambiente, sem alterar a lógica principal.
-- Autenticação e Autorização com JWT: Implemente a autenticação de usuários utilizando JWT. Garanta que o token seja gerado corretamente e que o sistema verifique a validade do token ao acessar rotas protegidas.
-- Armazenamento de Dados: Utilize o MongoDB para armazenar informações sobre usuários, papéis, atributos e permissões.
+- **Factory**: Use o Factory Pattern para criar papéis no RBAC ou atributos no ABAC dinamicamente, garantindo flexibilidade na criação de permissões e atributos.
+- **Strategy**: Implemente o Strategy Pattern para definir diferentes estratégias de controle de acesso (ex: uma estratégia para RBAC e outra para ABAC). Isso permitirá que o sistema escolha dinamicamente qual abordagem aplicar, dependendo do contexto do usuário ou do sistema.
+- **Policy**: Encapsule as regras de controle de acesso dentro do Policy Pattern para modularizar a lógica de avaliação de permissões, facilitando a manutenção e evolução do código.
+- **Chain of Responsibility**: Utilize o Chain of Responsibility para avaliar múltiplas políticas de acesso de forma sequencial. Cada política poderá tratar uma parte da solicitação e, se não puder responder, passará para a próxima na cadeia.
+- **Decorator Pattern**: Aplique o Decorator Pattern para adicionar condições extras às políticas de acesso, como restrições de tempo, localização geográfica, ou condições específicas do ambiente, sem alterar a lógica principal.
+- **Autenticação e Autorização**: Implemente a autenticação de usuários utilizando **JWT**. Garanta que o token seja gerado corretamente e que o sistema verifique a validade do token ao acessar rotas protegidas.
+- **Armazenamento de Dados**: Utilize o MongoDB para armazenar informações sobre usuários, papéis, atributos e permissões.
 
 ### Requisitos Adicionais:
 
