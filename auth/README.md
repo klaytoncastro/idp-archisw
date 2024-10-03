@@ -441,7 +441,7 @@ def login():
     return jsonify({"message": "Invalid credentials"}), 401
 ```
 
-Embora o RBAC seja um modelo de controle de acesso amplamente utilizado, o ABAC oferece uma abordagem mais flexível e adaptável para cenários em que as permissões precisam ser controladas dinamicamente com base em múltiplos fatores. O ABAC, no entanto, pode ser mais complexo de implementar e exige uma avaliação cuidadosa de desempenho em grandes sistemas.
+Embora o RBAC seja um modelo de controle de acesso amplamente utilizado, o ABAC oferece uma abordagem mais flexível e adaptável para cenários em que as permissões precisam ser controladas dinamicamente com base em múltiplos fatores. O ABAC, no entanto, pode ser mais complexo de implementar e exige uma avaliação cuidadosa de desempenho em grandes sistemas. Dessa forma, embora ele seja mais flexível, raramente é usado sozinho em sistemas básicos, podendo ser integrado progressivamente com RBAC em sistemas mais complexos.
 
 ## 6. Armazenamento de Dados com MongoDB
 
@@ -487,6 +487,33 @@ O sistema deve permitir diferentes níveis de acesso, como administradores, edit
 
 ### Como rodar o projeto? 
 
-Vamos configurar o ambiente para rodar em containers Docker. Usaremos Docker Compose para gerenciar os serviços. Clone este repositorio e suba os conteineres do Flask e MongoDB, conforme instruções do professor.
+Vamos configurar o ambiente para rodar em containers Docker. Usaremos Docker Compose para gerenciar os serviços. Clone este repositório e suba os container do Flask e MongoDB. 
 
+```bash
+cd /opt
+git clone https://github.com/klaytoncastro/idp-archisw
+cd idp-archisw/auth/flask
+docker compose up -d --build
+cd ..
+cd idp-archisw/auth/mongodb
+docker compose up -d --build
+```
 
+Faça um backup antes de alterar os arquivos da aplicação (ex: `app.py`). Após alteração, lembre-se de baixar e subir novamente o container (`docker compose down && docker compose up -d`). 
+
+### Divisão do Trabalho
+
+- Etapa 1: Hashing de Senhas com `bcrypt`
+**Meta**: Implementar a lógica de hashing de senhas utilizando bcrypt para garantir que senhas sejam armazenadas de forma segura. Além disso, implementar a verificação de senhas durante o processo de login. Teste o registro e login onde as senhas são criptografadas com bcrypt e testadas ao fazer login.
+
+- Etapa 2: Autenticação com JWT
+**Meta**: Implementar o sistema de autenticação utilizando JSON Web Tokens (JWT) para permitir o acesso de usuários autenticados. Os tokens devem ser gerados no login e verificados nas rotas protegidas. Crie uma rota de login que gere um token JWT e implemente rotas protegidas que exijam um token válido para acesso.
+
+- Etapa 3: Controle de Acesso com RBAC
+**Meta**: Implementar controle de acesso baseado em papéis (RBAC), onde diferentes papéis de usuários possuem permissões distintas. Defina papéis como administrador, editor e leitor, e controle o acesso com base nesses papéis. Teste definindo diferentes papéis de usuários (admin, editor, leitor) que possuam permissões distintas para acessar diferentes rotas.
+
+- Etapa 4: Controle de Acesso com ABAC
+**Meta**: Implementar controle de acesso baseado em atributos (ABAC), permitindo que as permissões sejam determinadas com base em atributos dinâmicos, como localização geográfica ou horário de acesso. Defina atributos como "localização" ou "horário" e implemente uma política de controle de acesso que verifique essas condições antes de autorizar uma ação.
+  
+- Etapa 5: Integração com MongoDB
+**Meta**: Integrar o MongoDB como a base de dados para armazenar usuários e suas permissões. Substitua o armazenamento de dados em memória por consultas e inserções no banco de dados. Configure o MongoDB para armazenar usuários e suas permissões, e implemente a lógica de CRUD (Create, Read, Update, Delete) para gerenciar usuários e papéis.
