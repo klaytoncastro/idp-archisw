@@ -405,27 +405,7 @@ def resource_access():
     return jsonify({"message": f"{action.capitalize()} access granted"})
 ```
 
-## 5. Armazenamento de Dados com MongoDB
-
-Para incrementar este desafio, utilizaremos MongoDB para armazenar os usuários e suas permissões:
-
-```python
-from pymongo import MongoClient
-
-client = MongoClient('localhost', 27017)
-db = client['auth_system']
-users_collection = db['users']
-
-# Inserindo usuário
-user = {"username": "joao", "password": hash_password("minhasenha"), "role": "editor"}
-users_collection.insert_one(user)
-
-# Consultando usuário
-user = users_collection.find_one({"username": "joao"})
-print(user)
-```
-
-## 6. JWT para Autenticação e Autorização
+## 5. JWT para Autenticação e Autorização
 
 Vamos utilizar JWT para autenticar os usuários e permitir o acesso a rotas protegidas.
 
@@ -462,6 +442,26 @@ def login():
 ```
 
 Embora o RBAC seja um modelo de controle de acesso amplamente utilizado, o ABAC oferece uma abordagem mais flexível e adaptável para cenários em que as permissões precisam ser controladas dinamicamente com base em múltiplos fatores. O ABAC, no entanto, pode ser mais complexo de implementar e exige uma avaliação cuidadosa de desempenho em grandes sistemas.
+
+## 6. Armazenamento de Dados com MongoDB
+
+Para incrementar nosso desafio, utilizaremos MongoDB para armazenar os usuários e suas permissões:
+
+```python
+from pymongo import MongoClient
+
+client = MongoClient('localhost', 27017)
+db = client['auth_system']
+users_collection = db['users']
+
+# Inserindo usuário
+user = {"username": "joao", "password": hash_password("minhasenha"), "role": "editor"}
+users_collection.insert_one(user)
+
+# Consultando usuário
+user = users_collection.find_one({"username": "joao"})
+print(user)
+```
 
 ## 7. Atividade em Grupo 
 
