@@ -4,7 +4,7 @@
 
 **Desafio de Integração:** Configure o Kong para rotear requisições REST para o serviço de leitura e gRPC para o serviço de atualização, ambos expostos em uma única URL pública.
 
-gRPC Server (para atualizações):
+### gRPC Server (para atualizações):
 
 ```python
 
@@ -29,12 +29,11 @@ inventory_pb2_grpc.add_InventoryServiceServicer_to_server(InventoryService(), se
 server.add_insecure_port('[::]:50051')
 server.start()
 server.wait_for_termination()
-REST Server (para consultas):
 ```
 
+### REST Server (para consultas): 
 
 ```python
-
 from flask import Flask, jsonify
 import pymongo
 
@@ -140,7 +139,7 @@ if __name__ == '__main__':
 WebSocket Server (para Notificações):
 ```
 
-### Notity:
+### Notity com Websockets:
 
 ```python
 
@@ -158,7 +157,9 @@ asyncio.get_event_loop().run_forever()
 ```
 
 ## 4. Centralização de Mensagens em Tempo Real com Kafka e WebSocket
+
 **Descrição da Tarefa:** Desenvolva um sistema de mensagens em tempo real em que eventos gerados (como ações de usuários) são publicados em um tópico Kafka e consumidos por um serviço WebSocket para exibição em dashboards.
+
 **Desafio de Integração:** Configure o Kong para rotear as requisições de clientes para o WebSocket e gerenciar a comunicação com o Kafka para escalar a entrega dos eventos.
 
 ### Produtor Kafka:
