@@ -52,10 +52,12 @@ if __name__ == '__main__':
 ```
 
 ## 2. Monitoramento em Tempo Real com WebSockets e REST para Logs de Aplicação
+
 **Descrição da Tarefa:** Desenvolva um serviço de logs de aplicação que usa WebSockets para atualizações em tempo real (para um cliente de monitoramento) e REST para consultas a logs históricos armazenados no Cassandra.
+
 **Desafio de Integração:** Configure o Kong para manter a conexão WebSocket aberta para atualizações em tempo real e, ao mesmo tempo, rotear requisições REST para consultas mais antigas.
 
-WebSocket Server:
+### WebSocket Server
 
 ```python
 
@@ -79,7 +81,7 @@ asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
 ```
 
-REST Server:
+### REST Server:
 
 ```python
 
@@ -107,7 +109,7 @@ if __name__ == '__main__':
 
 **Desafio de Integração:** Utilize o Kong para expor uma única URL que gerencie tanto consultas GraphQL como notificações WebSocket, com foco em configurações de roteamento e controle de tráfego para as requisições GraphQL.
 
-GraphQL Server:
+### GraphQL Server
 
 ```python
 from flask import Flask
@@ -138,6 +140,8 @@ if __name__ == '__main__':
 WebSocket Server (para Notificações):
 ```
 
+### Notity:
+
 ```python
 
 import asyncio
@@ -157,7 +161,7 @@ asyncio.get_event_loop().run_forever()
 **Descrição da Tarefa:** Desenvolva um sistema de mensagens em tempo real em que eventos gerados (como ações de usuários) são publicados em um tópico Kafka e consumidos por um serviço WebSocket para exibição em dashboards.
 **Desafio de Integração:** Configure o Kong para rotear as requisições de clientes para o WebSocket e gerenciar a comunicação com o Kafka para escalar a entrega dos eventos.
 
-Produtor Kafka:
+### Produtor Kafka:
 
 ```python
 
@@ -173,6 +177,8 @@ while True:
     time.sleep(2)
 WebSocket Server (Consumidor Kafka):
 ```
+
+### Consumidor Kafka: 
 
 ```python
 
