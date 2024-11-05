@@ -52,11 +52,13 @@ if __name__ == '__main__':
 
 ## 2. Monitoramento em Tempo Real com WebSockets e REST para Logs de Aplicação
 
+**Grupo**: Távora, Bee, Petrus, Vitor
+
 **Descrição da Tarefa:** Desenvolva um serviço de logs de aplicação que usa WebSockets para atualizações em tempo real (para um cliente de monitoramento) e REST para consultas a logs históricos armazenados no Cassandra.
 
 **Desafio de Integração:** Configure o Kong para manter a conexão WebSocket aberta para atualizações em tempo real e, ao mesmo tempo, rotear requisições REST para consultas mais antigas.
 
-### WebSocket Server
+### WebSocket Server:
 
 ```python
 
@@ -108,7 +110,7 @@ if __name__ == '__main__':
 
 **Desafio de Integração:** Utilize o Kong para expor uma única URL que gerencie tanto consultas GraphQL como notificações WebSocket, com foco em configurações de roteamento e controle de tráfego para as requisições GraphQL.
 
-### GraphQL Server
+### GraphQL Server (para Consultas):
 
 ```python
 from flask import Flask
@@ -136,10 +138,9 @@ app.add_url_rule('/graphql', view_func=GraphQLView.as_view('graphql', schema=sch
 
 if __name__ == '__main__':
     app.run(port=5002)
-WebSocket Server (para Notificações):
 ```
 
-### Notity com Websockets:
+### WebSocket Server (para Notificações):
 
 ```python
 
@@ -157,6 +158,9 @@ asyncio.get_event_loop().run_forever()
 ```
 
 ## 4. Centralização de Mensagens em Tempo Real com Kafka e WebSocket
+
+**Grupo**: Matheus Antônio
+<!--Leonardo Freitas, Maria Fernanda-->
 
 **Descrição da Tarefa:** Desenvolva um sistema de mensagens em tempo real em que eventos gerados (como ações de usuários) são publicados em um tópico Kafka e consumidos por um serviço WebSocket para exibição em dashboards.
 
