@@ -354,7 +354,6 @@ if __name__ == '__main__':
 ### WebSocket Server (para Notificações):
 
 ```python
-
 import asyncio
 import websockets
 
@@ -378,7 +377,6 @@ asyncio.get_event_loop().run_forever()
 ### Produtor Kafka:
 
 ```python
-
 from kafka import KafkaProducer
 import json
 import time
