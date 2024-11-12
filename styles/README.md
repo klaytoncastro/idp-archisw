@@ -223,7 +223,6 @@ A arquitetura de microserviços, amplamente adotada por empresas de tecnologia d
 ### gRPC Server (para atualizações):
 
 ```python
-
 import grpc
 from concurrent import futures
 import inventory_pb2_grpc  # Arquivo gerado pelo compilador gRPC
@@ -275,7 +274,6 @@ if __name__ == '__main__':
 ### WebSocket Server:
 
 ```python
-
 import asyncio
 import websockets
 import json
@@ -299,7 +297,6 @@ asyncio.get_event_loop().run_forever()
 ### REST Server:
 
 ```python
-
 from flask import Flask, jsonify
 from cassandra.cluster import Cluster
 
