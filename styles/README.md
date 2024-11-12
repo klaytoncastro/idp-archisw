@@ -36,6 +36,10 @@ A arquitetura MVC é ideal para sistemas que exigem organização modular, espec
 
 ### 2.3. SOA (Service-Oriented Architecture)
 
+<!--
+https://aws.amazon.com/pt/what-is/service-oriented-architecture/
+-->
+
 A arquitetura orientada a serviços (SOA) divide a aplicação em serviços independentes que executam funções específicas de negócio, com o objetivo de promover a reutilização e a interoperabilidade. Esse estilo se popularizou nas décadas de 1990 e 2000 em grandes corporações e instituições governamentais que precisavam integrar sistemas heterogêneos e aproveitar investimentos em sistemas legados.
 
 Cada serviço em SOA é autônomo e comunica-se por meio de interfaces bem definidas, geralmente usando protocolos como SOAP ou WSDL. Por exemplo, em um sistema de gerenciamento hospitalar, podem existir serviços distintos para pacientes, médicos e agendamentos, que se comunicam sem a necessidade de estarem no mesmo processo ou linguagem de programação. Essa independência facilita a reutilização dos serviços em diferentes contextos e permite a manutenção e evolução de cada serviço separadamente.
@@ -45,6 +49,10 @@ Em sistemas grandes, SOA facilita a adaptação e integração de novos componen
 Hoje, o estilo vem sendo paulatinamente substituído pela arquitetura de microserviços, mais leve e descentralizada, embora ainda seja bastante relevante em ambientes corporativos mais tradicionais, que dependem de aplicações legadas e priorizam a manutenção de elementos de padronização historicamente utilizados para garantir a interoperabilidade entre diversos sistemas.
 
 ### 2.4. Microservices
+
+<!--
+https://webandcrafts.com/blog/what-is-microservices-architecture
+-->
 
 A arquitetura de microserviços evoluiu a partir de SOA e se consolidou como uma das principais abordagens para construir sistemas escaláveis e flexíveis atualmente. Nesse estilo, a aplicação é dividida em uma coleção de serviços altamente especializados, cada um desempenhando uma função de negócio específica e operando de forma independente. Assim, cada microserviço pode ser desenvolvido, testado, implantado e escalado de forma autônoma, o que aumenta a flexibilidade e a capacidade de manutenção do sistema.
 
@@ -393,7 +401,6 @@ WebSocket Server (Consumidor Kafka):
 ### Consumidor Kafka: 
 
 ```python
-
 import asyncio
 import websockets
 from kafka import KafkaConsumer
