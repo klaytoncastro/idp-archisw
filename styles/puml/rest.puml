@@ -1,0 +1,22 @@
+@startuml
+skinparam actorBackgroundColor LightSkyBlue
+skinparam databaseBackgroundColor LemonChiffon
+skinparam nodeBackgroundColor LightGoldenrodYellow
+skinparam componentBackgroundColor LightSkyBlue
+skinparam arrowColor SeaGreen
+skinparam nodeBorderColor Black
+
+actor Client
+component "REST API" as API
+node "Server" {
+  database "Database"
+}
+
+Client -[#SeaGreen]-> API : HTTP Request
+API -[#SeaGreen]-> Server : Forward Request
+Server -[#SeaGreen]-> Database : Access Data
+Database -[#SeaGreen]--> Server : Return Data
+Server -[#SeaGreen]--> API : Response
+API -[#SeaGreen]--> Client : HTTP Response
+
+@enduml

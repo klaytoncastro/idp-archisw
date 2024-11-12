@@ -1,0 +1,25 @@
+@startuml
+skinparam actorBackgroundColor LightSkyBlue
+skinparam databaseBackgroundColor LemonChiffon
+skinparam entityBackgroundColor LightPink
+skinparam nodeBackgroundColor AliceBlue
+skinparam componentBackgroundColor LightCoral
+skinparam arrowColor DarkOrange
+skinparam nodeBorderColor Black
+
+actor Client
+component "SOAP API" as API
+node "SOAP Server" {
+  database "Database"
+  rectangle "WSDL" as WSDL
+}
+
+Client -[#DarkOrange]-> API : SOAP Request (XML)
+API -[#DarkOrange]-> "SOAP Server" : Forward Request
+"SOAP Server" -[#DarkOrange]-> WSDL : Validate Request
+"SOAP Server" -[#DarkOrange]-> Database : Access Data
+Database -[#DarkOrange]--> "SOAP Server" : Return Data
+"SOAP Server" -[#DarkOrange]--> API : SOAP Response (XML)
+API -[#DarkOrange]--> Client : SOAP Response (XML)
+
+@enduml
