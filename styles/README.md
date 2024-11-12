@@ -204,7 +204,7 @@ if __name__ == '__main__':
 
 **Grupo**: Mateus Batista, Lucas Rabelo, João Henrique
 
-**Objetivo da Tarefa:** Desenvolver um sistema de consulta de dados com GraphQL e MongoDB, incluindo um serviço de notificações em WebSocket para atualizações ao vivo, com o Kong gerenciando as conexões.
+**Objetivo da Tarefa:** Desenvolver um sistema de consulta de dados com GraphQL e MongoDB, incluindo um serviço de notificações em WebSocket para atualizações em tempo real, com o Kong gerenciando as conexões.
 
 ### GraphQL Server (para Consultas):
 
