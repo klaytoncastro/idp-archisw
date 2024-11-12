@@ -1,4 +1,4 @@
-# Estilos de Arquitetura e Padrões de Comunicação de APIs
+# Estilos de Arquitetura e Protocolos para Comunicação de APIs
 
 ## 1. Visão Geral
 
