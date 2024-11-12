@@ -2,7 +2,7 @@
 
 ## 1. Visão Geral
 
-Na engenharia de software, arquitetura de sistemas refere-se ao design e estrutura de um sistema de software, que define a organização dos componentes e suas interações. Nesse cenário, os sistemas de software modernos são construídos sobre diferentes estilos arquiteturais que moldam a organização, a interação de seus componentes, e definem como a aplicação é estruturada em sentido amplo, repercutindo diretamente na capacidade de escalabilidade, manutenibilidade e evolução do sistema: 
+Na engenharia de software, arquitetura de sistemas refere-se ao design e estrutura de um sistema de software, que define a organização dos componentes e suas interações. Nesse cenário, os sistemas de software modernos são construídos sobre diferentes estilos arquiteturais que moldam a estrutura de interação de seus componentes em sentido amplo, repercutindo diretamente na capacidade de organização, escalabilidade, manutenibilidade e evolução do sistema: 
 
 - **Escalabilidade**: Arquiteturas como microserviços e orientadas a eventos permitem escalabilidade independente de componentes, ao contrário de arquiteturas monolíticas, que apresentam limitações para escalar partes específicas.
 - **Manutenibilidade**: A modularidade em estilos como microserviços, SOA e MVC facilita a atualização e a correção de falhas sem interromper o sistema inteiro.
@@ -10,7 +10,7 @@ Na engenharia de software, arquitetura de sistemas refere-se ao design e estrutu
 
 ## 2. Estilos de Arquitetura
 
-Mesmo com as distinções típicas de cada estilo arquitetural, os sistemas de software devem ser planejados para operar segundo requisitos específicos e critérios aceitáveis de escalabilidade, desempenho, disponibilidade, segurança e facilidade de manutenção, desde os basilares sistemas monolíticos até as mais modernas arquiteturas distribuídas em microserviços e orientadas a eventos. A seguir, destacamos os principais estilos arquiteturais em sentido amplo. 
+Considerando as distinções típicas de cada estilo arquitetural, os sistemas de software devem ser planejados para operar segundo requisitos específicos e critérios aceitáveis de escalabilidade, desempenho, disponibilidade, segurança e facilidade de manutenção, desde os sistemas monolíticos maois conservadores até as modernas arquiteturas distribuídas baseadas em microserviços e orientadas a eventos. Vejamos agora em maiores detalhes os conceitos que estão por trás da abordagem de cada estilo: 
 
 ## 2.1.  Monolítico
 
