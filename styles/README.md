@@ -194,23 +194,45 @@ O Kong possui uma **edição para comunidade (CE)**, que é open-source, e uma *
 
 ### 4.2. Acessando o Kong e Configurando Rotas e Serviços:
 
-O arquivo `docker-compose.yml` sobe o Kong como API Gateway, juntamente com um banco de dados PostgreSQL para armazenar as suas configurações. Os contêineres adicionais para os serviços de banco de dados e serviços de mensageria citados como exemplo podem ser aproveitados no repositório [IDP-BigData](https://github.com/klaytoncastro/idp-bigdata).
+O arquivo `docker-compose.yml` sobe o Kong como API Gateway, juntamente com um banco de dados PostgreSQL para armazenar as suas configurações. 
+
+
+<!--Os contêineres adicionais para os serviços de banco de dados e serviços de mensageria citados como exemplo podem ser aproveitados no repositório [IDP-BigData](https://github.com/klaytoncastro/idp-bigdata).
+-->
 
 - Proxy `HTTP`: `http://localhost:8000`
 - Proxy `HTTPS`: `https://localhost:8443`
 - Admin `HTTP`: `http://localhost:8001`
 - Admin `HTTPS`: `https://localhost:8444`
 
-Com o Kong em execução, agora é possível configurar rotas, serviços e plugins via API de administração. Você poderá definir rotas específicas para cada estilo arquitetural de API implementado nas tarefas seguintes, permitindo que o Kong faça o roteamento conforme necessário. Para configurar uma rota no Kong para a API REST, você pode usar um comando `curl` como exemplo:
+Com o Kong em execução, você pode configurar rotas, serviços e plugins via API de administração. Estas etapas guiam você na definição de rotas específicas para diferentes APIs, permitindo que o Kong faça o roteamento conforme necessário. Primeiro, confirme que o Kong está em execução e que a API de administração está acessível:
+
+```bash
+curl -i http://localhost:8001/
+```
+
+Se o Kong estiver operando corretamente, você receberá uma resposta com informações sobre o estado da ferramenta. Agora, você precisa configurar um **serviço**, que representa a API que você deseja expor através do Kong. Neste exemplo, vamos adicionar um serviço chamado `inventory-service`, que será mapeado para um endpoint local http://localhost:5000. Esse endpoint é o endereço do backend que o Kong acessará (por exemplo, uma API de inventário) Para configurar o serviço, que cria o `inventory-service` e define a URL de destino como `http://localhost:5000`, execute o comando:
 
 ```bash
 curl -i -X POST http://localhost:8001/services/ \
   --data "name=inventory-service" \
   --data "url=http://localhost:5000"
+```
 
+Uma **rota** define como o Kong deve encaminhar as solicitações para o serviço configurado. Aqui, vamos criar uma rota para o serviço `inventory-service`, acessível através do caminho `/inventory`. Execute o comando abaixo para configurar a rota, que vincula o caminho `/inventory` ao serviço `inventory-service`:
+
+```bash
 curl -i -X POST http://localhost:8001/services/inventory-service/routes \
   --data "paths[]=/inventory"
 ```
+
+Pronto, agora, qualquer solicitação para `http://localhost:8000/inventory` será encaminhada para `http://localhost:5000`. Para verificar se o Kong está roteando corretamente para o backend, certifique-se de que a API de inventário (backend) está funcionando em `http://localhost:5000`. Em seguida, execute o comando:
+
+```bash
+curl -i http://localhost:8000/inventory
+```
+
+Se tudo estiver configurado corretamente, você deverá receber uma resposta do serviço backend através do Kong.
 
 ## 5. Desafio Extra: 
 
