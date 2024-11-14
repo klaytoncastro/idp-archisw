@@ -12,7 +12,7 @@ Na engenharia de software, arquitetura de sistemas refere-se ao design e estrutu
 
 Considerando as distinções típicas de cada estilo arquitetural, os sistemas de software devem ser planejados para operar segundo requisitos específicos e critérios aceitáveis de escalabilidade, desempenho, disponibilidade, segurança e facilidade de manutenção, desde os sistemas monolíticos maois conservadores até as modernas arquiteturas distribuídas baseadas em microserviços e orientadas a eventos. Vejamos agora em maiores detalhes os conceitos que estão por trás da abordagem de cada estilo: 
 
-## 2.1.  Monolítico
+### 2.1.  Monolítico
 
 A arquitetura monolítica tem suas raízes nos sistemas de mainframe das décadas de 1960 e 1970, em que o software era desenvolvido como uma unidade coesa. Nesse modelo, todos os componentes – lógica de negócios, interface de usuário e acesso a dados – são integrados em uma aplicação única e indivisível. Em um monolito, a aplicação é um bloco único de código, o que facilita o desenvolvimento inicial e a implantação, já que todas as partes funcionam juntas em um único processo.
 
@@ -22,7 +22,7 @@ Entretanto, as limitações do monolito se tornam aparentes à medida que o sist
 
 Assim, o monolito é menos flexível para evoluções incrementais e rápidas, o que limita sua utilização em ambientes que necessitam de escalabilidade e inovação contínuas. Apesar das limitações, a arquitetura monolítica é uma escolha sólida para sistemas de menor porte, onde os requisitos de escalabilidade e manutenção são mais simples. Por sua vez, organizações que visam alta escalabilidade e inovação frequentemente tem adotado arquiteturas mais distribuídas (microserviços ou orientadas a eventos) que, por sua modularidade, suportam melhor a evolução do sistema.
 
-## 2.2. MVC (Model-View-Controller)
+### 2.2. MVC (Model-View-Controller)
 
 A arquitetura MVC (Model-View-Controller) foi desenvolvida por Trygve Reenskaug em 1979 no contexto do Smalltalk-76 na Xerox PARC (Palo Alto Research Center). Inicialmente, o MVC foi criado para organizar interfaces gráficas de usuário, separando a lógica de aplicação (Model), a interface de apresentação (View) e o controle do fluxo de dados (Controller). Este padrão modularizou as aplicações, facilitando a manutenção e a expansão, com papéis claramente definidos:
 
