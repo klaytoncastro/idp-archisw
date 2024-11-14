@@ -219,7 +219,7 @@ Neste desafio extra, cada grupo recebeu uma proposta de implementação, onde ap
 ### 5.1. Integração de Serviços REST e gRPC em um Sistema de Inventário
 
 - **Grupo**: Rafael Cândido, Luca Verdade, Lucas Fidalgo, Vinicius
-- **Objetivo da Tarefa:** Desenvolver um sistema de inventário que utiliza uma API REST para acesso a dados do MongoDB e uma API gRPC para atualizações de alta frequência, utilizando o Kong para rotear requisições de forma unificada.
+- **Objetivo:** Desenvolver um sistema de inventário que utiliza uma API REST para acesso a dados do MongoDB e uma API gRPC para atualizações de alta frequência, utilizando o Kong para rotear requisições de forma unificada.
 
 ### gRPC Server (para atualizações):
 
@@ -270,7 +270,7 @@ if __name__ == '__main__':
 
 - **Grupo**: Távora, Bee, Petrus, Vitor
 
-- **Objetivo da Tarefa:** Desenvolver um serviço de logs de aplicação com WebSockets para atualizações em tempo real e REST para consultas a logs históricos no Redis ou Cassandra, utilizando o Kong para gerenciar as conexões.
+- **Objetivo:** Desenvolver um serviço de logs de aplicação com WebSockets para atualizações em tempo real e REST para consultas a logs históricos no Redis ou Cassandra, utilizando o Kong para gerenciar as conexões.
 
 ### WebSocket Server:
 
@@ -319,7 +319,7 @@ if __name__ == '__main__':
 
 - **Grupo**: Mateus Batista, Lucas Rabelo, João Henrique
 
-- **Objetivo da Tarefa:** Desenvolver um sistema de consulta de dados com GraphQL e MongoDB, incluindo um serviço de notificações em WebSocket para atualizações em tempo real, com o Kong gerenciando as conexões.
+- **Objetivo:** Desenvolver um sistema de consulta de dados com GraphQL e MongoDB, incluindo um serviço de notificações em WebSocket para atualizações em tempo real, com o Kong gerenciando as conexões.
 
 ### GraphQL Server (para Consultas):
 
@@ -372,7 +372,7 @@ asyncio.get_event_loop().run_forever()
 - **Grupo**: Matheus Antônio
 <!--Leonardo Freitas, Maria Fernanda-->
 
-- **Objetivo da Tarefa:** Desenvolver um sistema de mensagens em tempo real que utiliza Kafka para publicação de eventos e WebSocket para exibição em dashboards, com o Kong gerenciando as conexões de clientes.
+- **Objetivo:** Desenvolver um sistema de mensagens em tempo real que utiliza Kafka para publicação de eventos e WebSocket para exibição em dashboards, com o Kong gerenciando as conexões de clientes.
 
 ### Produtor Kafka:
 
