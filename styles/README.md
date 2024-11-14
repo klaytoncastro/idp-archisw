@@ -173,8 +173,6 @@ MQTT é um protocolo leve e otimizado para dispositivos de Internet das Coisas (
 
 ## 4. Atividade Prática
 
-Em nossa atividade prática, aplicamos a integração de diferentes estilos arquiteturais de API (REST, gRPC, GraphQL, WebSockets e MQTT) usando o Kong como API Gateway, que facilita o gerenciamento centralizado dessas arquiteturas. Os estilos escolhidos refletem tendências e demandas do mercado de TIC, onde flexibilidade e escalabilidade são essenciais para sistemas robustos, tanto em ambientes on-premises quanto em nuvem. 
-
 A arquitetura de microserviços, amplamente adotada por empresas de tecnologia de ponta, oferece modularidade para desenvolver, implantar e escalar serviços de forma independente, acelerando atualizações e minimizando o impacto de falhas. Com a crescente necessidade de sistemas orientados a eventos, usados para atualizações em tempo real em e-commerce, monitoramento e IoT, o estilo Event-Driven também se torna fundamental. A integração com o Kong permite o roteamento unificado e controle de tráfego entre APIs, atendendo às exigências de interoperabilidade e segurança com alto desempenho, alinhadas ao avanço e escalabilidade exigidos pelo mercado de TI.
 
 ### 4.1. API Gateway: Componente Essencial em Microsserviços
@@ -216,11 +214,12 @@ curl -i -X POST http://localhost:8001/services/inventory-service/routes \
 
 ## 5. Desafio Extra: 
 
+Neste desafio extra, cada grupo recebeu uma proposta de implementação, onde aplicaremos a integração de diferentes estilos arquiteturais de API (REST, gRPC, GraphQL, WebSockets e MQTT) usando o Kong como API Gateway. Os estilos definidos refletem tendências e demandas do mercado de TIC, onde flexibilidade e escalabilidade são essenciais para sistemas robustos, tanto em ambientes on-premises quanto em nuvem. 
+
 ### 5.1. Integração de Serviços REST e gRPC em um Sistema de Inventário
 
 - **Grupo**: Rafael Cândido, Luca Verdade, Lucas Fidalgo, Vinicius
 - **Objetivo da Tarefa:** Desenvolver um sistema de inventário que utiliza uma API REST para acesso a dados do MongoDB e uma API gRPC para atualizações de alta frequência, utilizando o Kong para rotear requisições de forma unificada.
-
 
 ### gRPC Server (para atualizações):
 
