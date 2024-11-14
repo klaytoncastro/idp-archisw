@@ -214,12 +214,11 @@ curl -i -X POST http://localhost:8001/services/inventory-service/routes \
   --data "paths[]=/inventory"
 ```
 
-### 4.3. Desafio Extra: 
+## 5. Desafio Extra: 
 
-- **(I) Integração de Serviços REST e gRPC em um Sistema de Inventário**
+### 5.1. Integração de Serviços REST e gRPC em um Sistema de Inventário
 
 - **Grupo**: Rafael Cândido, Luca Verdade, Lucas Fidalgo, Vinicius
-
 - **Objetivo da Tarefa:** Desenvolver um sistema de inventário que utiliza uma API REST para acesso a dados do MongoDB e uma API gRPC para atualizações de alta frequência, utilizando o Kong para rotear requisições de forma unificada.
 
 
@@ -268,7 +267,7 @@ if __name__ == '__main__':
     app.run(port=5000)
 ```
 
-- **(II) Monitoramento em Tempo Real com WebSockets e REST para Logs de Aplicação**
+### 5.2. Monitoramento em Tempo Real com WebSockets e REST para Logs de Aplicação
 
 - **Grupo**: Távora, Bee, Petrus, Vitor
 
@@ -317,7 +316,7 @@ def get_logs():
 if __name__ == '__main__':
     app.run(port=5001)
 ```
-- **(III) Sistema de Consulta com GraphQL e Notificações em Tempo Real**
+### 5.3. Sistema de Consulta com GraphQL e Notificações em Tempo Real
 
 - **Grupo**: Mateus Batista, Lucas Rabelo, João Henrique
 
@@ -369,7 +368,7 @@ asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
 ```
 
-- **(IV) Centralização de Mensagens em Tempo Real com Kafka e WebSocket**
+### 5.4. Centralização de Mensagens em Tempo Real com Kafka e WebSocket
 
 - **Grupo**: Matheus Antônio
 <!--Leonardo Freitas, Maria Fernanda-->
@@ -412,7 +411,7 @@ asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
 ```
 
-## 5. Conclusão
+## 6. Conclusão
 
 Cada estilo de arquitetura e comunicação de API foi selecionado para ilustrar cenários que vocês enfrentarão em projetos reais: SOA e SOAP para transações seguras e complexas em ambientes conservadores, a flexibilidade e simplicidade do REST em sistemas distribuídos, e a responsividade dos WebSockets em aplicações de tempo real, como chats e sistemas de monitoramento. Essas abordagens permitem observar como diferentes requisitos — desde controle de acesso até atualização em tempo real — influenciam as decisões arquiteturais.
 
