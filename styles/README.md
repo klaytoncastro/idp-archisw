@@ -38,6 +38,7 @@ A arquitetura MVC é ideal para sistemas que exigem organização modular, espec
 
 <!--
 https://aws.amazon.com/pt/what-is/service-oriented-architecture/
+https://www.techtarget.com/searchapparchitecture/definition/service-oriented-architecture-SOA
 -->
 
 A arquitetura orientada a serviços (SOA) divide a aplicação em serviços independentes que executam funções específicas de negócio, com o objetivo de promover a reutilização e a interoperabilidade. Esse estilo se popularizou nas décadas de 1990 e 2000 em grandes corporações e instituições governamentais que precisavam integrar sistemas heterogêneos e aproveitar investimentos em sistemas legados.
@@ -170,39 +171,37 @@ MQTT é um protocolo leve e otimizado para dispositivos de Internet das Coisas (
 
 ---
 
-## 4. API Gateway: Componente Essencial em Microsserviços
+## 4. Atividade Prática
 
-Em arquiteturas modernas, particularmente as baseadas em microserviços, o API Gateway serve como um ponto central de entrada para todas as requisições. Ele permite o gerenciamento unificado de autenticação, controle de tráfego, roteamento de requisições e monitoramento, simplificando a complexidade de gerenciar múltiplos serviços individuais. Assim, o API Gateway atua como um intermediário, transformando, autentificando e direcionando as requisições para os serviços de backend apropriados. Nesse cenário, o projeto Kong oferece uma plataforma de API Gateway de código aberto, projetada para atuar como uma camada intermediária entre clientes e serviços baseados em APIs, e se destaca por sua capacidade de abstrair e gerenciar a comunicação entre diferentes serviços. 
+Em nossa atividade prática, aplicamos a integração de diferentes estilos arquiteturais de API (REST, gRPC, GraphQL, WebSockets e MQTT) usando o Kong como API Gateway, que facilita o gerenciamento centralizado dessas arquiteturas. Os estilos escolhidos refletem tendências e demandas do mercado de TIC, onde flexibilidade e escalabilidade são essenciais para sistemas robustos, tanto em ambientes on-premises quanto em nuvem. 
 
-### 4.1. Características
+A arquitetura de microserviços, amplamente adotada por empresas de tecnologia de ponta, oferece modularidade para desenvolver, implantar e escalar serviços de forma independente, acelerando atualizações e minimizando o impacto de falhas. Com a crescente necessidade de sistemas orientados a eventos, usados para atualizações em tempo real em e-commerce, monitoramento e IoT, o estilo Event-Driven também se torna fundamental. A integração com o Kong permite o roteamento unificado e controle de tráfego entre APIs, atendendo às exigências de interoperabilidade e segurança com alto desempenho, alinhadas ao avanço e escalabilidade exigidos pelo mercado de TI.
 
-O Kong oferece uma série de funcionalidades que facilitam a criação e a operação de APIs escaláveis e seguras:
+### 4.1. API Gateway: Componente Essencial em Microsserviços
+
+Em arquiteturas modernas, particularmente as baseadas em microserviços, o API Gateway serve como um ponto central de entrada para todas as requisições. Ele permite o gerenciamento unificado de autenticação, controle de tráfego, roteamento de requisições e monitoramento, simplificando a complexidade de gerenciar múltiplos serviços individuais. Assim, o API Gateway atua como um intermediário, transformando, autentificando e direcionando as requisições para os serviços de backend apropriados. 
+
+Nesse cenário, o projeto Kong oferece uma plataforma de API Gateway de código aberto, projetada para atuar como uma camada intermediária entre clientes e serviços baseados em APIs, e se destaca por sua capacidade de abstrair e gerenciar a comunicação entre diferentes serviços:
 
 - **Autenticação e Segurança**: Suporta autenticação com tokens JWT, OAuth, ACLs e IP Restriction, além de SSL dinâmico.
 - **Controle de Tráfego e Rate Limiting**: Permite limitar o número de requisições por unidade de tempo, protegendo o backend de sobrecargas.
 - **Transformação de Requisições**: Suporta modificações nos parâmetros e cabeçalhos das requisições para adequá-las às necessidades dos serviços backend.
 - **Monitoramento e Logs**: Integra-se com ferramentas de monitoramento, como Prometheus, Datadog e ELK, possibilitando uma visão completa sobre o uso das APIs.
 
-O Kong possui uma **edição para comunidade (CE)**, que é open-source, e uma **edição empresarial (EE)**, que inclui recursos adicionais para grandes empresas, como um portal de desenvolvedores, escalabilidade avançada e suporte 24/7.
-
-### 4.2. Arquitetura do Kong
-
-A arquitetura do Kong é composta por duas camadas principais:
+O Kong possui uma **edição para comunidade (CE)**, que é open-source, e uma **edição empresarial (EE)**, que inclui recursos adicionais para grandes empresas, como um portal de desenvolvedores, escalabilidade avançada e suporte 24/7. A arquitetura do Kong é composta por duas camadas principais:
 
 - **Kong Server**: Responsável pelo roteamento e processamento das requisições. Ele conta com uma camada pública para gerenciar requisições e uma camada privada para configurar APIs e plugins.
 
 - **Datastore do Kong**: O Kong utiliza um banco de dados externo (como PostgreSQL ou Cassandra) para armazenar suas configurações, além de um cache próprio para melhorar a performance.
 
-O arquivo `docker-compose.yml` desta pasta levanta o Kong como API Gateway, juntamente com um banco de dados PostgreSQL para armazenar as suas configurações. Os contêineres adicionais para os serviços de banco de dados e serviços de mensageria citados como exemplo podem ser aproveitados no repositório [IDP-BigData](https://github.com/klaytoncastro/idp-bigdata).
+### 4.2. Acessando o Kong e Configurando Rotas e Serviços:
 
-### 4.3. Acessando o Kong:
+O arquivo `docker-compose.yml` sobe o Kong como API Gateway, juntamente com um banco de dados PostgreSQL para armazenar as suas configurações. Os contêineres adicionais para os serviços de banco de dados e serviços de mensageria citados como exemplo podem ser aproveitados no repositório [IDP-BigData](https://github.com/klaytoncastro/idp-bigdata).
 
 - Proxy `HTTP`: `http://localhost:8000`
 - Proxy `HTTPS`: `https://localhost:8443`
 - Admin `HTTP`: `http://localhost:8001`
 - Admin `HTTPS`: `https://localhost:8444`
-
-### 4.4. Configurando Rotas e Serviços
 
 Com o Kong em execução, agora é possível configurar rotas, serviços e plugins via API de administração. Você poderá definir rotas específicas para cada estilo arquitetural de API implementado nas tarefas seguintes, permitindo que o Kong faça o roteamento conforme necessário. Para configurar uma rota no Kong para a API REST, você pode usar um comando `curl` como exemplo:
 
@@ -215,13 +214,9 @@ curl -i -X POST http://localhost:8001/services/inventory-service/routes \
   --data "paths[]=/inventory"
 ```
 
-## 5. Atividade Prática
+### 4.3. Desafio Extra: 
 
-Em nossa atividade prática, aplicamos a integração de diferentes estilos arquiteturais de API (REST, gRPC, GraphQL, WebSockets e MQTT) usando o Kong como API Gateway, que facilita o gerenciamento centralizado dessas arquiteturas. Os estilos escolhidos refletem tendências e demandas do mercado de TIC, onde flexibilidade e escalabilidade são essenciais para sistemas robustos, tanto em ambientes on-premises quanto em nuvem. 
-
-A arquitetura de microserviços, amplamente adotada por empresas de tecnologia de ponta, oferece modularidade para desenvolver, implantar e escalar serviços de forma independente, acelerando atualizações e minimizando o impacto de falhas. Com a crescente necessidade de sistemas orientados a eventos, usados para atualizações em tempo real em e-commerce, monitoramento e IoT, o estilo Event-Driven também se torna fundamental. A integração com o Kong permite o roteamento unificado e controle de tráfego entre APIs, atendendo às exigências de interoperabilidade e segurança com alto desempenho, alinhadas ao avanço e escalabilidade exigidos pelo mercado de TI.
-
-### 5.1. Integração de Serviços REST e gRPC em um Sistema de Inventário
+- **Integração de Serviços REST e gRPC em um Sistema de Inventário**
 
 **Grupo**: Rafael Cândido, Luca Verdade, Lucas Fidalgo, Vinicius
 
@@ -273,7 +268,7 @@ if __name__ == '__main__':
     app.run(port=5000)
 ```
 
-### 5.2. Monitoramento em Tempo Real com WebSockets e REST para Logs de Aplicação
+- **5.2. Monitoramento em Tempo Real com WebSockets e REST para Logs de Aplicação**
 
 **Grupo**: Távora, Bee, Petrus, Vitor
 
@@ -322,8 +317,7 @@ def get_logs():
 if __name__ == '__main__':
     app.run(port=5001)
 ```
-
-### 5.3. Sistema de Consulta com GraphQL e Notificações em Tempo Real
+- **Sistema de Consulta com GraphQL e Notificações em Tempo Real**
 
 **Grupo**: Mateus Batista, Lucas Rabelo, João Henrique
 
@@ -375,7 +369,7 @@ asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
 ```
 
-### 5.4. Centralização de Mensagens em Tempo Real com Kafka e WebSocket
+- **Centralização de Mensagens em Tempo Real com Kafka e WebSocket**
 
 **Grupo**: Matheus Antônio
 <!--Leonardo Freitas, Maria Fernanda-->
@@ -418,7 +412,7 @@ asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
 ```
 
-## 6. Conclusão
+## 5. Conclusão
 
 Cada estilo de arquitetura e comunicação de API foi selecionado para ilustrar cenários que vocês enfrentarão em projetos reais: SOA e SOAP para transações seguras e complexas em ambientes conservadores, a flexibilidade e simplicidade do REST em sistemas distribuídos, e a responsividade dos WebSockets em aplicações de tempo real, como chats e sistemas de monitoramento. Essas abordagens permitem observar como diferentes requisitos — desde controle de acesso até atualização em tempo real — influenciam as decisões arquiteturais.
 
