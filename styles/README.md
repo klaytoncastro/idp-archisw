@@ -337,7 +337,7 @@ if __name__ == '__main__':
 ```
 ### 5.3. Sistema de Consulta com GraphQL e Notificações em Tempo Real
 
-- **Grupo**: Mateus Batista, Lucas Rabelo, João Henrique
+- **Grupo**: Mateus Batista, Lucas Rabelo, João Henrique, Leonardo
 
 - **Objetivo:** Desenvolver um sistema de consulta de dados com GraphQL e MongoDB, incluindo um serviço de notificações em WebSocket para atualizações em tempo real, com o Kong gerenciando as conexões.
 
