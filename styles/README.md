@@ -120,11 +120,15 @@ REST é um estilo arquitetural criado para proporcionar uma forma leve e eficien
 
 ### 3.3. GraphQL
 
-GraphQL foi desenvolvido para proporcionar uma abordagem flexível à recuperação de dados, permitindo que o cliente especifique exatamente quais informações deseja receber. Isso minimiza o problema de "over-fetching" e "under-fetching" característico de APIs REST, especialmente nos casos que exigem a manipulação de dados complexos de modo inter-relacionado.
+GraphQL é uma linguagem de consulta para APIs desenvolvida com o objetivo de oferecer maior flexibilidade e eficiência na comunicação entre cliente e servidor. Ao contrário das APIs REST tradicionais, que retornam dados em estruturas fixas, o GraphQL permite que o cliente especifique exatamente quais informações deseja receber. Isso reduz significativamente o volume de dados trafegados, melhorando o desempenho da aplicação e evitando os problemas típicos de over-fetching (dados em excesso) e under-fetching (dados insuficientes) frequentemente observados em APIs REST, especialmente em cenários que envolvem dados complexos e inter-relacionados.
 
-- **Vantagens e Desafios**: Com uma estrutura declarativa, GraphQL permite que o cliente defina os dados necessários em uma única chamada, oferecendo acesso mais granular aos dados.
+Essa abordagem se mostra particularmente vantajosa em arquiteturas distribuídas, onde múltiplos serviços são integrados para compor uma aplicação. Com o GraphQL, é possível unificar consultas a diferentes fontes de dados em uma única API, simplificando o gerenciamento e acesso às informações. Em sistemas complexos, o uso do GraphQL também contribui para a manutenibilidade e evolução da solução. Como o cliente define os dados que precisa, alterações na estrutura do backend tendem a causar menos impacto nos consumidores da API, aumentando a estabilidade e desacoplamento entre as partes.
 
-- **Contexto de Aplicação**: GraphQL é ideal para aplicações com dados complexos e interconectados, sendo amplamente utilizado em interfaces de usuário ricas, onde a flexibilidade de consulta é um diferencial importante.
+Outro ponto forte do GraphQL é seu sistema de tipagem estática, aliado a uma sintaxe intuitiva. Isso permite que os desenvolvedores compreendam melhor o modelo de dados e escrevam consultas com menos erros. Além disso, o esquema definido em GraphQL funciona como uma documentação viva da API, atualizada automaticamente, o que facilita a colaboração entre equipes e a escalabilidade da aplicação.
+
+- **Vantagens e Desafios**: Com sua estrutura declarativa, o GraphQL permite que o cliente obtenha dados de forma precisa, em uma única chamada, promovendo acesso mais granular às informações. Entretanto, seu uso pode exigir uma curva de aprendizado inicial, e cuidados adicionais com aspectos de segurança e desempenho em consultas muito complexas.
+
+- **Contexto de Aplicação**: GraphQL é ideal para aplicações com dados complexos e interconectados — como dashboards, redes sociais, sistemas mobile e SPAs (Single Page Applications) — onde a flexibilidade de consulta e a eficiência na comunicação com o backend são diferenciais estratégicos.
 
 ### 3.4. gRPC
 
